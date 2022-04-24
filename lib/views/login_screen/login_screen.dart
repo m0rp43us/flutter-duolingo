@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import 'components/bottom_buttons.dart';
 import 'components/center_display.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -17,7 +18,12 @@ class LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CenterDisplay()
+      body: Column(
+        children: const [
+          Expanded(child: CenterDisplay()),
+          BottomButtons(),
+        ],
+      ),
     );
   }
 }
