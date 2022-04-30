@@ -1,4 +1,5 @@
 import 'package:duolingo/views/login_screen/login_screen.dart';
+import 'package:duolingo/views/welcome_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 class MyDuolingo extends StatelessWidget {
@@ -6,10 +7,15 @@ class MyDuolingo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      routes: {
+        '/': (context) => const WelcomeScreen(),
+        // When navigating to the "/second" route, build the SecondScreen widget.
+        '/login': (context) => const LoginScreen(),
+      },
       debugShowCheckedModeBanner: false,
       title: 'Duolingo',
-      home: LoginScreen(),
+      // home: const WelcomeScreen(),
     );
   }
 }

@@ -9,7 +9,7 @@ class CenterDisplay extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset('assets/images/duo-wave.png', width: 200, height: 170),
+          Image.asset('assets/images/duo-wave.png', height: 150),
           Container(padding: const EdgeInsets.all(5)),
           Image.asset('assets/images/duolingo-logo.png',
               width: 125, height: 40),
