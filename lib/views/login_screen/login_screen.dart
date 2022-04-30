@@ -1,10 +1,12 @@
 import 'dart:ui';
 
+import 'package:duolingo/shared/firebase_authentication.dart';
 import 'package:duolingo/views/login_screen/components/facebook_button.dart';
 import 'package:duolingo/views/login_screen/components/forgot_password.dart';
 import 'package:duolingo/views/login_screen/components/google_button.dart';
 import 'package:duolingo/views/login_screen/components/login_button.dart';
 import 'package:duolingo/views/login_screen/components/policy_text.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'components/app_bar.dart';
 import 'components/input_field.dart';
@@ -14,12 +16,22 @@ class LoginScreen extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return LoginScreenState();
+    return _LoginScreenState();
   }
 }
 
-class LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   final formKey = GlobalKey<FormState>();
+  late FirebaseAuthentication auth;
+
+  @override
+  void initState() {
+    super.initState();
+    Firebase.initializeApp().whenComplete(() {
+      auth = FirebaseAuthentication();
+      setState(() {});
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +43,10 @@ class LoginScreenState extends State<LoginScreen> {
           children: [
             Form(
               key: formKey,
-              child: InputField(),
+              child: InputField(auth),
             ),
-            Container(margin: const EdgeInsets.only(top: 10)),
-            const LoginButton(),
+            // Container(margin: const EdgeInsets.only(top: 10)),
+            // const LoginButton(),
             Container(margin: const EdgeInsets.only(top: 10)),
             ForgotPassword(),
             bottomDisplay(),
@@ -64,5 +76,4 @@ class LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
-
 }

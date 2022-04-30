@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "943909557521",
+    "project_id": "flutter-duolingo",
+    "storage_bucket": "flutter-duolingo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943909557521:android:378718040789b9945fe8b0",
+        "android_client_info": {
+          "package_name": "tdtu.flutter.duolingo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943909557521-qb3r2h5coupso1neqr9bhg5aiu2sg3ua.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzXTd7vJm_5Cpu3HOCiuvF8kEil9sRszA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943909557521-qb3r2h5coupso1neqr9bhg5aiu2sg3ua.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -8,11 +8,11 @@ class WelcomeScreen extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return WelcomeScreenState();
+    return _WelcomeScreenState();
   }
 }
 
-class WelcomeScreenState extends State<WelcomeScreen> {
+class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
