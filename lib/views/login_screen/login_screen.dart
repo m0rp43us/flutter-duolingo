@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:duolingo/shared/firebase_authentication.dart';
 import 'package:duolingo/views/login_screen/components/facebook_button.dart';
 import 'package:duolingo/views/login_screen/components/forgot_password.dart';
@@ -22,7 +20,12 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final formKey = GlobalKey<FormState>();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
   late FirebaseAuthentication auth;
+
+  String loginMessage = '';
 
   @override
   void initState() {
@@ -43,10 +46,11 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             Form(
               key: formKey,
-              child: InputField(auth),
+              child: InputField(emailController, passwordController),
             ),
+            // Text(loginMessage),
             // Container(margin: const EdgeInsets.only(top: 10)),
-            // const LoginButton(),
+            LoginButton(auth, emailController, passwordController),
             Container(margin: const EdgeInsets.only(top: 10)),
             ForgotPassword(),
             bottomDisplay(),
@@ -67,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
               // mainAxisSize: MainAxisSize.max,
               children: [
                 FacebookButton(),
-                GoogleButton(),
+                GoogleButton(auth),
               ],
             ),
             PolicyText(),

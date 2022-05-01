@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "943909557521-pt50qjvgdhgfeip898285vvput060tr2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tdtu.flutter.duolingo",
+            "certificate_hash": "71e97016dad79c31b4869eb0659b05e310be4f13"
+          }
+        },
+        {
           "client_id": "943909557521-qb3r2h5coupso1neqr9bhg5aiu2sg3ua.apps.googleusercontent.com",
           "client_type": 3
         }

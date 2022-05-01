@@ -1,9 +1,9 @@
-import 'package:duolingo/shared/firebase_authentication.dart';
 import 'package:flutter/material.dart';
 
 class InputField extends StatefulWidget {
-  final FirebaseAuthentication auth;
-  const InputField(this.auth, {Key? key}) : super(key: key);
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
+  const InputField(this.emailController, this.passwordController, {Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -12,10 +12,7 @@ class InputField extends StatefulWidget {
 }
 
 class InputFieldState extends State<InputField> {
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
   bool isObscure = true;
-  String txtMessage = '';
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +22,6 @@ class InputFieldState extends State<InputField> {
         children: [
           accountField(),
           passwordField(),
-          Text(txtMessage),
-          Container(padding: EdgeInsets.all(10)),
-          loginButton(),
         ],
       ),
     );
@@ -35,7 +29,7 @@ class InputFieldState extends State<InputField> {
 
   accountField() {
     return TextFormField(
-      controller: emailController,
+      controller: widget.emailController,
       keyboardType: TextInputType.emailAddress,
       decoration: const InputDecoration(
         border: OutlineInputBorder(
@@ -45,7 +39,6 @@ class InputFieldState extends State<InputField> {
           ),
         ),
         hintText: 'Username or email',
-        // errorText: snapshot.hasError ? snapshot.error as String : null
       ),
       // validator: validateEmail,
       onChanged: (value) {
@@ -56,7 +49,7 @@ class InputFieldState extends State<InputField> {
 
   passwordField() {
     return TextFormField(
-      controller: passwordController,
+      controller: widget.passwordController,
       obscureText: isObscure,
       decoration: InputDecoration(
         suffixIcon: IconButton(
@@ -80,50 +73,4 @@ class InputFieldState extends State<InputField> {
       // validator: validatePassword,
     );
   }
-
-  loginButton() {
-    return Container(
-      width: double.infinity,
-      height: 50,
-      margin: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
-      padding: const EdgeInsets.only(bottom: 2),
-      child: ElevatedButton(
-        child: const Text(
-          'SIGN IN',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        style: ElevatedButton.styleFrom(
-          primary: const Color(0xFF1CB0F6),
-          elevation: 5,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-        ),
-        onPressed: loginPressed,
-      ),
-    );
-  }
-
-  loginPressed() {
-    String userId = '';
-
-    widget.auth.login(emailController.text, passwordController.text).then((value) {
-      if (value == null) {
-        setState(() {
-          txtMessage = 'Login Error';
-        });
-      } else {
-        userId = value;
-        setState(() {
-          txtMessage = 'User $userId successfully logged in';
-        });
-      }
-    });
-
-  }
-
 }
