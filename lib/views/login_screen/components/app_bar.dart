@@ -4,7 +4,6 @@ class LoginAppBar extends StatelessWidget implements PreferredSizeWidget {
   const LoginAppBar({Key? key}) : super(key: key);
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => const Size.fromHeight(100);
 
   @override

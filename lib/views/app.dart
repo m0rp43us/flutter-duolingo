@@ -1,3 +1,4 @@
+import 'package:duolingo/views/choose_language_screen/choose_language_screen.dart';
 import 'package:duolingo/views/login_screen/login_screen.dart';
 import 'package:duolingo/views/welcome_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +11,8 @@ class MyDuolingo extends StatelessWidget {
     return MaterialApp(
       routes: {
         '/': (context) => const WelcomeScreen(),
-        // When navigating to the "/second" route, build the SecondScreen widget.
         '/login': (context) => const LoginScreen(),
+        '/choose-language': (context) => const ChooseLanguageScreen(),
       },
       debugShowCheckedModeBanner: false,
       title: 'Duolingo',
