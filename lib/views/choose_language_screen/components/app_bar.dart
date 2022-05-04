@@ -6,7 +6,7 @@ class ChooseLanguageAppbar extends StatelessWidget
   const ChooseLanguageAppbar({Key? key}) : super(key: key);
 
   @override
-  Size get preferredSize => const Size.fromHeight(100);
+  Size get preferredSize => const Size.fromHeight(80);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class ChooseLanguageAppbar extends StatelessWidget
       toolbarHeight: 80,
       shadowColor: Colors.transparent,
       backgroundColor: Colors.transparent,
-      title: const StageProgressBar(),
+      title: const StageProgressBar(0.5),
       centerTitle: true,
       leading: Padding(
         padding: const EdgeInsets.only(left: 15),
