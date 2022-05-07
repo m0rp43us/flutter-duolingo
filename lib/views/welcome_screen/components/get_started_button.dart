@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ChooseLanguageButton extends StatelessWidget {
+class GetStartedButton extends StatelessWidget {
   final BuildContext context;
-  const ChooseLanguageButton(this.context, {Key? key}) : super(key: key);
+  const GetStartedButton(this.context, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +13,10 @@ class ChooseLanguageButton extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 2),
       child: ElevatedButton(
         onPressed: () {
-          Navigator.pushNamed(context, '/choose-language');
+          Navigator.pushNamed(context, '/home');
         },
         child: const Text(
-          'CHOOSE A LANGUAGE',
+          'GET STARTED',
           style: TextStyle(
             color: Colors.white,
             fontSize: 18,

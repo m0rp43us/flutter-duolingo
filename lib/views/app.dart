@@ -3,6 +3,8 @@ import 'package:duolingo/views/login_screen/login_screen.dart';
 import 'package:duolingo/views/welcome_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'home_screen/home_screen.dart';
+
 class MyDuolingo extends StatelessWidget {
   const MyDuolingo({Key? key}) : super(key: key);
 
@@ -13,6 +15,7 @@ class MyDuolingo extends StatelessWidget {
         '/': (context) => const WelcomeScreen(),
         '/login': (context) => const LoginScreen(),
         '/choose-language': (context) => const ChooseLanguageScreen(),
+        '/home': (context) => const HomeScreen(),
       },
       debugShowCheckedModeBanner: false,
       title: 'Duolingo',

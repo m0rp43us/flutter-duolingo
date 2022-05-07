@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'components/center_display.dart';
-import 'components/choose_language_button.dart';
+import 'components/get_started_button.dart';
 import 'components/log_in_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -33,7 +33,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ChooseLanguageButton(context),
+            GetStartedButton(context),
             LogInButton(context),
           ],
         ),
