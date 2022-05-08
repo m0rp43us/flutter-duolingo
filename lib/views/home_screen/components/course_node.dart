@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class CourseNode extends StatelessWidget {
   final String name;
-  final String image;
+  String? image;
+  Color? color;
+  int? crown;
+  double? percent;
 
-  const CourseNode(this.name, this.image, {Key? key}) : super(key: key);
+  CourseNode(this.name, {this.image, this.color, this.crown, this.percent, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,20 +24,20 @@ class CourseNode extends StatelessWidget {
                 Transform.rotate(
                   angle: 2.7,
                   child: CircularPercentIndicator(
-                    radius: 60.0,
+                    radius: 55.0,
                     lineWidth: 10.0,
-                    percent: 0.25,
+                    percent: percent ?? 0,
                     circularStrokeCap: CircularStrokeCap.round,
                     progressColor: const Color(0xFFFFC800),
                     backgroundColor: Colors.grey.shade300,
                   ),
                 ),
-                const CircleAvatar(
-                  backgroundColor: Color(0xFFB66E28), //Color(0xFF1CB0F6),
-                  radius: 40,
+                CircleAvatar(
+                  backgroundColor: color ?? const Color(0xFFB66E28), //Color(0xFF1CB0F6),
+                  radius: 37,
                 ),
                 Image.asset(
-                  image,
+                  image ?? 'assets/images/egg.png',
                   width: 42,
                 ),
                 Positioned(
@@ -44,9 +47,9 @@ class CourseNode extends StatelessWidget {
                     alignment: Alignment.center,
                     children: [
                       Image.asset('assets/images/crown.png', width: 40),
-                      const Text(
-                        '2',
-                        style: TextStyle(
+                      Text(
+                        '${crown == null || crown == 0 ? '' : crown}',
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 17,
                           color: Color(0xFFB66E28),
