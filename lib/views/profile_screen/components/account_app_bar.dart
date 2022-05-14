@@ -25,7 +25,8 @@ class AccountAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Container(
       padding: const EdgeInsets.all(10),
       child: const CircleAvatar(
-        backgroundImage: AssetImage('assets/images/profile.png'),
+        backgroundColor: Colors.transparent,
+        backgroundImage: AssetImage('assets/images/profile.jpg'),
         radius: 37,
       ),
     );

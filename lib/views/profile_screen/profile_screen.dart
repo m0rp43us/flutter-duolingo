@@ -23,6 +23,8 @@ class ProfileScreen extends StatelessWidget {
               Statistics(),
               FriendSuggestions(),
               Friends(),
+              // Text('data'),
+              // Expanded(child: Column(children: [Text('yo')],)),
             ],
           ),
         ),
