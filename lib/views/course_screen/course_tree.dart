@@ -1,8 +1,9 @@
-import 'package:duolingo/views/home_screen/components/course_node.dart';
-import 'package:duolingo/views/home_screen/components/double_course_node.dart';
-import 'package:duolingo/views/home_screen/components/triple_course_node.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'components/course_node.dart';
+import 'components/double_course_node.dart';
+import 'components/triple_course_node.dart';
+
 
 class CourseTree extends StatelessWidget {
   const CourseTree({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
-import 'package:duolingo/views/home_screen/components/course_node.dart';
 import 'package:flutter/material.dart';
-import 'package:percent_indicator/circular_percent_indicator.dart';
+
+import 'course_node.dart';
 
 class TripleCourseNode extends StatelessWidget {
   final CourseNode node1;
