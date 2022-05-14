@@ -4,7 +4,7 @@ class AccountAppBar extends StatelessWidget implements PreferredSizeWidget {
   const AccountAppBar({Key? key}) : super(key: key);
 
   @override
-  Size get preferredSize => const Size.fromHeight(65);
+  Size get preferredSize => const Size.fromHeight(75);
 
   @override
   Widget build(BuildContext context) {
@@ -12,49 +12,53 @@ class AccountAppBar extends StatelessWidget implements PreferredSizeWidget {
       toolbarHeight: 120,
       backgroundColor: Colors.white,
       elevation: 1.5,
-      leading: flag(),
+      leading: account(),
+      leadingWidth: 100,
+      centerTitle: false,
       actions: [
-        heart(),
+        avatar(),
       ],
     );
   }
 
-  Widget heart() {
-    return Row(
-      children: [
-        Image.asset(
-          'assets/images/heart.png',
-          width: 36,
-        ),
-        const Padding(
-          padding: EdgeInsets.all(2),
-        ),
-        Image.asset('assets/images/infinity.png', width: 20),
-        const Padding(
-          padding: EdgeInsets.all(5),
-        ),
-      ],
-    );
-  }
-
-
-  Widget flag() {
+  Widget avatar() {
     return Container(
-      margin: const EdgeInsets.only(left: 15, top: 18, bottom: 18),
-      decoration: BoxDecoration(
-        image: const DecorationImage(
-          fit: BoxFit.scaleDown,
-          image: AssetImage('assets/images/korea-flag-transparent.png'),
-          // fit: BoxFit.cover,
-        ),
-        borderRadius: BorderRadius.circular(5),
-        border: Border.all(
-          width: 2.5,
-          color: const Color(0xFFE5E5E5),
-        ),
-        color: Colors.grey.shade100,
+      padding: const EdgeInsets.all(10),
+      child: const CircleAvatar(
+        backgroundImage: AssetImage('assets/images/profile.jpg'),
+        radius: 37,
       ),
-      child: null /* add child content here */,
+    );
+  }
+
+  Widget account() {
+    return Container(
+      margin: const EdgeInsets.only(left: 10, top: 18),
+      child: Column(
+        children: const [
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'Vince',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF4B4B4B),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'marcusvince',
+              style: TextStyle(
+                fontSize: 15,
+                color: Color(0xFFAFAFAF),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
