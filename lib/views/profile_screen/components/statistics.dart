@@ -7,18 +7,39 @@ class Statistics extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: GridView.count(
-        primary: false,
-        padding: const EdgeInsets.all(10),
-        crossAxisCount: 2,
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
-        childAspectRatio: 2.55,
+      child: Column(
         children: [
-          statBox('assets/images/streak.png', '34', 'Day Streak'),
-          statBox('assets/images/electric.png', '1770', 'Total XP'),
-          statBox('assets/images/pearl.png', 'Pearl', 'Current League'),
-          statBox('assets/images/chest.png', '7', 'Top 3 Finishes'),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: const Text(
+                'Statistics',
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF4B4B4B),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: GridView.count(
+              primary: false,
+              shrinkWrap: true,
+              padding: const EdgeInsets.all(10),
+              crossAxisCount: 2,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              childAspectRatio: (1 / .4),//2.55,
+              children: [
+                statBox('assets/images/streak.png', '34', 'Day Streak'),
+                statBox('assets/images/electric.png', '1770', 'Total XP'),
+                statBox('assets/images/pearl.png', 'Pearl', 'Current League'),
+                statBox('assets/images/chest.png', '7', 'Top 3 Finishes'),
+              ],
+            ),
+          ),
         ],
       ),
     );

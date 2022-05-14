@@ -25,7 +25,7 @@ class AccountAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Container(
       padding: const EdgeInsets.all(10),
       child: const CircleAvatar(
-        backgroundImage: AssetImage('assets/images/profile.jpg'),
+        backgroundImage: AssetImage('assets/images/profile.png'),
         radius: 37,
       ),
     );
@@ -33,15 +33,16 @@ class AccountAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   Widget account() {
     return Container(
-      margin: const EdgeInsets.only(left: 10, top: 18),
+      margin: const EdgeInsets.only(left: 10, top: 15),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: const [
           Align(
             alignment: Alignment.centerLeft,
             child: Text(
               'Vince',
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 25,
                 fontWeight: FontWeight.bold,
                 color: Color(0xFF4B4B4B),
               ),
