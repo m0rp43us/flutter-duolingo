@@ -9,20 +9,7 @@ class Statistics extends StatelessWidget {
     return Expanded(
       child: Column(
         children: [
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Container(
-              padding: EdgeInsets.all(10),
-              child: const Text(
-                'Statistics',
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF4B4B4B),
-                ),
-              ),
-            ),
-          ),
+          bigTitle('Statistics'),
           Expanded(
             child: GridView.count(
               primary: false,
@@ -31,7 +18,7 @@ class Statistics extends StatelessWidget {
               crossAxisCount: 2,
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
-              childAspectRatio: (1 / .4),//2.55,
+              childAspectRatio: (1/.4),
               children: [
                 statBox('assets/images/streak.png', '34', 'Day Streak'),
                 statBox('assets/images/electric.png', '1770', 'Total XP'),
@@ -94,4 +81,22 @@ class Statistics extends StatelessWidget {
       ),
     );
   }
+
+  bigTitle(String text) {
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        child: Text(
+          text,
+          style: const TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFF4B4B4B),
+          ),
+        ),
+      ),
+    );
+  }
+
 }

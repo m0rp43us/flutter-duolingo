@@ -11,9 +11,9 @@ class FriendSuggestions extends StatelessWidget {
         children: [
           bigTitle(),
           Container(
-            margin: const EdgeInsets.symmetric(vertical: 10),
-            // padding: EdgeInsets.all(10),
-            height: 180.0,
+            margin: const EdgeInsets.only(top: 15),
+            padding: const EdgeInsets.only(top: 5),
+            height: 170.0,
             child: ListView(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
@@ -35,7 +35,7 @@ class FriendSuggestions extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(left: 10),
       padding: const EdgeInsets.all(5),
-      height: 180,
+      height: 170,
       width: 145,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -59,12 +59,10 @@ class FriendSuggestions extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 30,
-      margin: const EdgeInsets.only(top:10, bottom: 10, right: 5, left: 5),
+      margin: const EdgeInsets.only(top: 10, bottom: 10, right: 5, left: 5),
       // padding: const EdgeInsets.only(bottom: 2),
       child: ElevatedButton(
-        onPressed: () {
-
-        },
+        onPressed: () {},
         child: const Text(
           'FOLLOW',
           style: TextStyle(
@@ -82,7 +80,6 @@ class FriendSuggestions extends StatelessWidget {
         ),
       ),
     );
-
   }
 
   Widget followedBy(String name) {
