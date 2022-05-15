@@ -1,3 +1,4 @@
+import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import 'package:flutter/material.dart';
 
 class Friends extends StatelessWidget {
@@ -5,13 +6,12 @@ class Friends extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
+    return Column(
         children: [
           bigTitle('Friends'),
           Container(
             margin: const EdgeInsets.all(10),
-            height: 175,
+            height: 350,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
@@ -19,18 +19,56 @@ class Friends extends StatelessWidget {
                 color: const Color(0xFFE5E5E5),
               ),
             ),
-            child: ListView(
-              shrinkWrap: true,
-              children: [
-                friend('/assets/images/yellow.png', 'Batman', '10234'),
-                friend('/assets/images/yellow.png', 'vinod', '893'),
-                friend('/assets/images/yellow.png', 'Marc', '123'),
-                friend('/assets/images/yellow.png', 'Marc', '2012'),
-              ],
+            child: ContainedTabBarView(
+              tabBarProperties: const TabBarProperties(
+                indicatorColor: Color(0xFF1CB0F6),
+                indicatorWeight: 3,
+              ),
+              tabs: [tabBarText('FOLLOWING'), tabBarText('FOLLOWERS')],
+              views: [following(), followers()],
             ),
           ),
         ],
-      ),
+
+    );
+  }
+
+  tabBarText(String text) {
+    return Text(
+      text,
+      style: const TextStyle(
+          color: Color(0xFF777777), fontWeight: FontWeight.bold, fontSize: 18),
+    );
+  }
+
+  followers() {
+    return ListView(
+      shrinkWrap: true,
+      children: [
+        friend('assets/images/profile.png', 'Wanda', '314'),
+        friend('assets/images/profile.jpg', 'Marc', '2012'),
+        friend('assets/images/profile.jpg', 'Marc', '2012'),
+        friend('assets/images/white.png', 'Batman', '10234'),
+        friend('assets/images/cyan.png', 'vinod', '893'),
+        friend('assets/images/profile.jpg', 'Marc', '2012'),
+        friend('assets/images/profile.jpg', 'Marc', '2012'),
+        friend('assets/images/profile.jpg', 'Marc', '2012'),
+      ],
+    );
+  }
+
+  following() {
+    return ListView(
+      shrinkWrap: true,
+      children: [
+        friend('assets/images/white.png', 'Batman', '10234'),
+        friend('assets/images/cyan.png', 'vinod', '893'),
+        friend('assets/images/profile.png', 'Wanda', '314'),
+        friend('assets/images/profile.jpg', 'Marc', '2012'),
+        friend('assets/images/profile.jpg', 'Marc', '2012'),
+        friend('assets/images/profile.jpg', 'Marc', '2012'),
+        friend('assets/images/profile.jpg', 'Marc', '2012'),
+      ],
     );
   }
 
@@ -96,7 +134,7 @@ class Friends extends StatelessWidget {
     return Align(
       alignment: Alignment.centerLeft,
       child: Container(
-        padding: const EdgeInsets.only(left: 10),
+        padding: const EdgeInsets.only(top: 20, left: 10, bottom: 10),
         child: Text(
           text,
           style: const TextStyle(

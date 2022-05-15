@@ -13,9 +13,8 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: const AccountAppBar(),
       body: SingleChildScrollView(
-        child: ConstrainedBox(
-          constraints:
-              BoxConstraints(maxHeight: MediaQuery.of(context).size.height),
+        child: Container(
+          height: 2000,
           child: Column(
             children: const [
               Padding(padding: EdgeInsets.all(10)),
@@ -23,7 +22,7 @@ class ProfileScreen extends StatelessWidget {
               Statistics(),
               FriendSuggestions(),
               Friends(),
-              // Text('data'),
+              Text('data'),
               // Expanded(child: Column(children: [Text('yo')],)),
             ],
           ),

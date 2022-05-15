@@ -6,29 +6,25 @@ class Statistics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
-        children: [
-          bigTitle('Statistics'),
-          Expanded(
-            child: GridView.count(
-              primary: false,
-              shrinkWrap: true,
-              padding: const EdgeInsets.all(10),
-              crossAxisCount: 2,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              childAspectRatio: (1/.4),
-              children: [
-                statBox('assets/images/streak.png', '34', 'Day Streak'),
-                statBox('assets/images/electric.png', '1770', 'Total XP'),
-                statBox('assets/images/pearl.png', 'Pearl', 'Current League'),
-                statBox('assets/images/chest.png', '7', 'Top 3 Finishes'),
-              ],
-            ),
-          ),
-        ],
-      ),
+    return Column(
+      children: [
+        bigTitle('Statistics'),
+        GridView.count(
+          primary: false,
+          shrinkWrap: true,
+          padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
+          crossAxisCount: 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          childAspectRatio: (1 / .4),
+          children: [
+            statBox('assets/images/streak.png', '34', 'Day Streak'),
+            statBox('assets/images/electric.png', '1770', 'Total XP'),
+            statBox('assets/images/pearl.png', 'Pearl', 'Current League'),
+            statBox('assets/images/chest.png', '7', 'Top 3 Finishes'),
+          ],
+        ),
+      ],
     );
   }
 
@@ -98,5 +94,4 @@ class Statistics extends StatelessWidget {
       ),
     );
   }
-
 }

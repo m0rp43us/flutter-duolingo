@@ -6,28 +6,26 @@ class FriendSuggestions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
-        children: [
-          bigTitle(),
-          Container(
-            margin: const EdgeInsets.only(top: 15),
-            padding: const EdgeInsets.only(top: 5),
-            height: 170.0,
-            child: ListView(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              children: [
-                friendBox('assets/images/cyan.png', 'Cyan', 'Yellow'),
-                friendBox('assets/images/impostor.png', 'Impostor', 'Red'),
-                friendBox('assets/images/white.png', 'White', 'Pink'),
-                friendBox('assets/images/green.png', 'Green', 'Red'),
-                friendBox('assets/images/yellow.png', 'Yellow', 'Pink'),
-              ],
-            ),
+    return Column(
+      children: [
+        bigTitle(),
+        Container(
+          margin: const EdgeInsets.only(top: 15),
+          padding: const EdgeInsets.only(top: 5),
+          height: 170.0,
+          child: ListView(
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            children: [
+              friendBox('assets/images/cyan.png', 'Cyan', 'Yellow'),
+              friendBox('assets/images/impostor.png', 'Impostor', 'Red'),
+              friendBox('assets/images/white.png', 'White', 'Pink'),
+              friendBox('assets/images/green.png', 'Green', 'Red'),
+              friendBox('assets/images/yellow.png', 'Yellow', 'Pink'),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
@@ -120,7 +118,7 @@ class FriendSuggestions extends StatelessWidget {
     return Align(
       alignment: Alignment.centerLeft,
       child: Container(
-        padding: const EdgeInsets.only(left: 10),
+        padding: const EdgeInsets.only(top: 20, left: 10),
         child: const Text(
           'Friend Suggestions',
           style: TextStyle(
