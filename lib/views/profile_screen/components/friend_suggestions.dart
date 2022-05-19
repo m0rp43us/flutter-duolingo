@@ -10,16 +10,16 @@ class FriendSuggestions extends StatelessWidget {
       children: [
         bigTitle(),
         Container(
-          margin: const EdgeInsets.only(top: 15),
+          margin: const EdgeInsets.only(top: 15, left: 5),
           padding: const EdgeInsets.only(top: 5),
-          height: 170.0,
+          height: 190.0,
           child: ListView(
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,
             children: [
               friendBox('assets/images/cyan.png', 'Cyan', 'Yellow'),
-              friendBox('assets/images/impostor.png', 'Impostor', 'Red'),
-              friendBox('assets/images/white.png', 'White', 'Pink'),
+              friendBox('assets/images/impostor.png', 'Impostor', 'Heisenberg'),
+              friendBox('assets/images/white.png', 'White', 'Jessie Pinkman'),
               friendBox('assets/images/green.png', 'Green', 'Red'),
               friendBox('assets/images/yellow.png', 'Yellow', 'Pink'),
             ],
@@ -47,13 +47,14 @@ class FriendSuggestions extends StatelessWidget {
           avatar(image),
           friendName(name),
           followedBy(follower),
+          const Spacer(),
           followButton(),
         ],
       ),
     );
   }
 
-  Widget followButton() {
+  followButton() {
     return Container(
       width: double.infinity,
       height: 30,
@@ -80,7 +81,7 @@ class FriendSuggestions extends StatelessWidget {
     );
   }
 
-  Widget followedBy(String name) {
+  followedBy(String name) {
     return Text(
       'Followed by $name',
       style: const TextStyle(
@@ -92,7 +93,7 @@ class FriendSuggestions extends StatelessWidget {
     );
   }
 
-  Widget friendName(String name) {
+  friendName(String name) {
     return Text(
       name,
       style: const TextStyle(
@@ -103,7 +104,7 @@ class FriendSuggestions extends StatelessWidget {
     );
   }
 
-  Widget avatar(String image) {
+  avatar(String image) {
     return Container(
       padding: const EdgeInsets.only(top: 5),
       margin: const EdgeInsets.only(bottom: 10),
@@ -118,7 +119,7 @@ class FriendSuggestions extends StatelessWidget {
     return Align(
       alignment: Alignment.centerLeft,
       child: Container(
-        padding: const EdgeInsets.only(top: 20, left: 10),
+        padding: const EdgeInsets.only(top: 20, left: 15),
         child: const Text(
           'Friend Suggestions',
           style: TextStyle(

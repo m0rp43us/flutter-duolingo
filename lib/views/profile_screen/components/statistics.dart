@@ -12,7 +12,7 @@ class Statistics extends StatelessWidget {
         GridView.count(
           primary: false,
           shrinkWrap: true,
-          padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
+          padding: const EdgeInsets.only(top: 10, left: 15, right: 15),
           crossAxisCount: 2,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
@@ -30,7 +30,7 @@ class Statistics extends StatelessWidget {
 
   statBox(String iconImage, String record, String label) {
     return Container(
-      padding: const EdgeInsets.only(left: 12, top: 8, bottom: 8),
+      padding: const EdgeInsets.only(left: 12, top: 5, bottom: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
@@ -82,7 +82,7 @@ class Statistics extends StatelessWidget {
     return Align(
       alignment: Alignment.centerLeft,
       child: Container(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.only(left: 15, top: 10, bottom: 10),
         child: Text(
           text,
           style: const TextStyle(

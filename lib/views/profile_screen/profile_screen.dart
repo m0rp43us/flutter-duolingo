@@ -1,4 +1,5 @@
 import 'package:duolingo/views/profile_screen/components/account_app_bar.dart';
+import 'package:duolingo/views/profile_screen/components/achievements.dart';
 import 'package:duolingo/views/profile_screen/components/friend_suggestions.dart';
 import 'package:duolingo/views/profile_screen/components/friend_updates.dart';
 import 'package:duolingo/views/profile_screen/components/friends.dart';
@@ -13,7 +14,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: const AccountAppBar(),
       body: SingleChildScrollView(
-        child: Container(
+        child: SizedBox(
           height: 2000,
           child: Column(
             children: const [
@@ -22,7 +23,7 @@ class ProfileScreen extends StatelessWidget {
               Statistics(),
               FriendSuggestions(),
               Friends(),
-              Text('data'),
+              Achievements(),
               // Expanded(child: Column(children: [Text('yo')],)),
             ],
           ),

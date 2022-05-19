@@ -7,39 +7,31 @@ class Friends extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-        children: [
-          bigTitle('Friends'),
-          Container(
-            margin: const EdgeInsets.all(10),
-            height: 350,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(
-                width: 2.5,
-                color: const Color(0xFFE5E5E5),
-              ),
-            ),
-            child: ContainedTabBarView(
-              tabBarProperties: const TabBarProperties(
-                indicatorColor: Color(0xFF1CB0F6),
-                indicatorWeight: 3,
-              ),
-              tabs: [tabBarText('FOLLOWING'), tabBarText('FOLLOWERS')],
-              views: [following(), followers()],
+      children: [
+        bigTitle('Friends'),
+        Container(
+          margin: const EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+          height: 344,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(
+              width: 2.5,
+              color: const Color(0xFFE5E5E5),
             ),
           ),
-        ],
-
+          child: ContainedTabBarView(
+            tabBarProperties: const TabBarProperties(
+              indicatorColor: Color(0xFF1CB0F6),
+              indicatorWeight: 3,
+            ),
+            tabs: [tabBarText('FOLLOWING'), tabBarText('FOLLOWERS')],
+            views: [following(), followers()],
+          ),
+        ),
+      ],
     );
   }
 
-  tabBarText(String text) {
-    return Text(
-      text,
-      style: const TextStyle(
-          color: Color(0xFF777777), fontWeight: FontWeight.bold, fontSize: 18),
-    );
-  }
 
   followers() {
     return ListView(
@@ -83,7 +75,7 @@ class Friends extends StatelessWidget {
       child: Row(
         children: [
           avatar(image),
-          Padding(padding: EdgeInsets.all(5)),
+          Padding(padding: const EdgeInsets.all(5)),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -108,7 +100,7 @@ class Friends extends StatelessWidget {
     );
   }
 
-  Widget friendName(String name) {
+  friendName(String name) {
     return Text(
       name,
       style: const TextStyle(
@@ -119,7 +111,7 @@ class Friends extends StatelessWidget {
     );
   }
 
-  Widget avatar(String image) {
+  avatar(String image) {
     return Container(
       padding: const EdgeInsets.only(top: 5),
       margin: const EdgeInsets.all(10),
@@ -130,11 +122,19 @@ class Friends extends StatelessWidget {
     );
   }
 
+  tabBarText(String text) {
+    return Text(
+      text,
+      style: const TextStyle(
+          color: Color(0xFF777777), fontWeight: FontWeight.bold, fontSize: 18),
+    );
+  }
+
   bigTitle(String text) {
     return Align(
       alignment: Alignment.centerLeft,
       child: Container(
-        padding: const EdgeInsets.only(top: 20, left: 10, bottom: 10),
+        padding: const EdgeInsets.only(top: 20, left: 15, bottom: 10),
         child: Text(
           text,
           style: const TextStyle(

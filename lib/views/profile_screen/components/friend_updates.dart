@@ -7,7 +7,7 @@ class FriendUpdates extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 70,
-      margin: const EdgeInsets.all(10),
+      margin: const EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
@@ -33,9 +33,9 @@ class FriendUpdates extends StatelessWidget {
               color: Color(0xFF4B4B4B),
             ),
           ),
-          Spacer(),
-          Icon(Icons.arrow_forward_ios, size: 20, color: Color(0xFFAFAFAF)),
-          Padding(padding: EdgeInsets.all(10)),
+          const Spacer(),
+          const Icon(Icons.arrow_forward_ios, size: 20, color: Color(0xFFAFAFAF)),
+          const Padding(padding: EdgeInsets.all(10)),
         ],
       ),
     );
