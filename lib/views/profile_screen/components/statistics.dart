@@ -32,7 +32,7 @@ class Statistics extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(left: 12, top: 5, bottom: 5),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(15),
         border: Border.all(
           width: 2.5,
           color: const Color(0xFFE5E5E5),

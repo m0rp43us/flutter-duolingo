@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
@@ -14,7 +13,7 @@ class Achievements extends StatelessWidget {
           margin: const EdgeInsets.only(left: 15, right: 15, top: 10),
           // height: 350,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(15),
             border: Border.all(
               width: 2.5,
               color: const Color(0xFFE5E5E5),
@@ -48,7 +47,6 @@ class Achievements extends StatelessWidget {
       padding: const EdgeInsets.only(left: 15),
       height: 135,
       decoration: BoxDecoration(
-        // borderRadius: BorderRadius.circular(10),
         border: Border.all(
           color: const Color(0xFFE5E5E5),
         ),
@@ -78,7 +76,6 @@ class Achievements extends StatelessWidget {
       height: 45,
       padding: const EdgeInsets.only(left: 15),
       decoration: BoxDecoration(
-        // borderRadius: BorderRadius.circular(10),
         border: Border.all(
           color: const Color(0xFFE5E5E5),
         ),
