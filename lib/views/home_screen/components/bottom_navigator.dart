@@ -15,7 +15,8 @@ class BottomNavigator extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return BottomNavigationBar(
-      // showSelectedLabels: false,
+      showSelectedLabels: false,
+      // enableFeedback: false,
       // showUnselectedLabels: false,
       unselectedItemColor: Colors.grey,
       items: <BottomNavigationBarItem>[

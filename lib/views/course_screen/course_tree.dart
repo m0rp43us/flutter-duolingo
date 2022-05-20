@@ -4,7 +4,6 @@ import 'components/course_node.dart';
 import 'components/double_course_node.dart';
 import 'components/triple_course_node.dart';
 
-
 class CourseTree extends StatelessWidget {
   const CourseTree({Key? key}) : super(key: key);
 
@@ -90,7 +89,8 @@ class CourseTree extends StatelessWidget {
               image: 'assets/images/tree.png',
               color: Colors.pink,
             ),
-          )
+          ),
+          const Padding(padding: EdgeInsets.only(bottom: 15)),
         ],
       ),
     );
