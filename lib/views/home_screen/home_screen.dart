@@ -1,9 +1,11 @@
 import 'package:duolingo/views/course_screen/course_tree.dart';
 import 'package:duolingo/views/home_screen/components/leaderboard_app_bar.dart';
+import 'package:duolingo/views/home_screen/components/shop_app_bar.dart';
 import 'package:duolingo/views/home_screen/components/stat_app_bar.dart';
 import 'package:duolingo/views/home_screen/components/bottom_navigator.dart';
 import 'package:duolingo/views/leaderboard_screen/leaderboard_screen.dart';
 import 'package:duolingo/views/profile_screen/profile_screen.dart';
+import 'package:duolingo/views/shop_screen/shop_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'components/profile_app_bar.dart';
@@ -29,12 +31,14 @@ class _HomeScreenState extends State<HomeScreen> {
       CourseTree(),
       ProfileScreen(),
       LeaderboardScreen(),
+      ShopScreen(),
     ];
 
     final List<PreferredSizeWidget> appBars = [
       StatAppBar(),
       ProfileAppBar(),
-      LeaderboardAppBar()
+      LeaderboardAppBar(),
+      ShopAppBar(),
     ];
 
     return Scaffold(
