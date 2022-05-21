@@ -1,4 +1,6 @@
 import 'package:duolingo/views/course_screen/course_tree.dart';
+import 'package:duolingo/views/explore_screen/explore_screen.dart';
+import 'package:duolingo/views/home_screen/components/explore_app_bar.dart';
 import 'package:duolingo/views/home_screen/components/leaderboard_app_bar.dart';
 import 'package:duolingo/views/home_screen/components/shop_app_bar.dart';
 import 'package:duolingo/views/home_screen/components/stat_app_bar.dart';
@@ -32,6 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ProfileScreen(),
       LeaderboardScreen(),
       ShopScreen(),
+      ExploreScreen(),
     ];
 
     final List<PreferredSizeWidget> appBars = [
@@ -39,6 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ProfileAppBar(),
       LeaderboardAppBar(),
       ShopAppBar(),
+      ExploreAppBar(),
     ];
 
     return Scaffold(
