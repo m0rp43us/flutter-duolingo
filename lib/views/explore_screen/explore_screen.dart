@@ -1,3 +1,4 @@
+import 'package:duolingo/views/lesson_screen/lesson_screen.dart';
 import 'package:flutter/material.dart';
 
 class ExploreScreen extends StatelessWidget {
@@ -9,11 +10,20 @@ class ExploreScreen extends StatelessWidget {
       shrinkWrap: true,
       children: [
         const Padding(padding: EdgeInsets.only(bottom: 5)),
-        newsBox(
-            'assets/images/news-1.png',
-            'Stop! Grammar time!',
-            'We have a few tricks up our sleeves for practicing grammar rules and patterns.',
-            'May 19'),
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const LessonScreen(),
+              ),
+            );
+          },
+          child: newsBox(
+              'assets/images/news-1.png',
+              'Stop! Grammar time!',
+              'We have a few tricks up our sleeves for practicing grammar rules and patterns.',
+              'May 19'),
+        ),
         newsBox(
             'assets/images/news-2.png',
             'Duolingo ABC is now available!',
@@ -35,7 +45,6 @@ class ExploreScreen extends StatelessWidget {
             'We looked at the data to see what languages different generations tend to study, and we noticed a few cool trends.',
             'May 2'),
         const Padding(padding: EdgeInsets.only(top: 15))
-
       ],
     );
   }
